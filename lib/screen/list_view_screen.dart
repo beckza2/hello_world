@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:hello_world/screen/form_screen.dart';
-import 'package:hello_world/screen/list_view_screen.dart';
 
-class HomeScreen extends StatefulWidget {
-  HomeScreen({Key key}) : super(key: key);
+class ListViewScreen extends StatefulWidget {
+  ListViewScreen({Key key}) : super(key: key);
 
   @override
-  _HomeScreenState createState() => _HomeScreenState();
+  _ListViewScreenState createState() => _ListViewScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _ListViewScreenState extends State<ListViewScreen> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -50,41 +48,14 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
         appBar: AppBar(
-          title: Text("My first Project"),
+          title: Text("ListView Screen"),
         ),
-        body: Center(
-          child: Column(
-            children: [
-              Container(color: Colors.red, child: Text("CAT")),
-              Container(
-                  width: 150,
-                  height: 150,
-                  color: Colors.amberAccent,
-                  child: Image.asset('assets/images/cat.jpg')),
-              ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => ListViewScreen(),
-                      ),
-                    );
-                  },
-                  child: Text("กด")),
-              ElevatedButton.icon(
-                icon: Icon(Icons.g_translate),
-                onPressed: () {
-                   Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => FormScreen(),
-                      ),
-                    );
-                },
-                label: Text("Translate"),
-              ),
-            ],
-          ),
+        body: ListView(
+          children: [
+            ListTile(
+              title: Text("หัวข้อ 1 "),
+            )
+          ],
         ),
         bottomNavigationBar: BottomNavigationBar(
           items: [
